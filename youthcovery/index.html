@@ -17,18 +17,18 @@
 <div id="app" v-cloak>
 	<nav id="nav" class="navbar fixed-top navbar-expand-lg">
 		<div class="container" id="navcontain">
-		<a href="./../index.html" class="mr-5"><img class="logo" src="./../img/ico/LJR.png" height="40px"><span class="d-none d-md-inline space"> · 交通美学研究所</span></a>
+		<a href="./../index.html" class="mr-5"><img class="logo" src="./../img/ico/LJR.png" height="40px"><span class="d-none d-md-inline space"> · 中原铁道(数字)博物馆</span></a>
 		
 		<div id="navbarlink" style="justify-content:flex-end;">
 		<div class="navbar-nav">
 			<div class="btnbox">
-				<a class="nav-item nav-link active">寻探青年</a>
+				<a class="nav-item nav-link active">基本陈列</a>
 			</div>
 			<div class="btnbox">
-				<a class="nav-item nav-link" href="./routetrace">绘途计划</a>
+				<a class="nav-item nav-link" href="./research">收藏研究</a>
 			</div>
 			<div class="btnbox">
-				<a class="nav-item nav-link" href="./historia">博物档案</a>
+				<a class="nav-item nav-link" href="./souvenir">博物文创</a>
 			</div>
 			<!-- <div class="btnbox">
 				<a class="nav-item nav-link" href="#">铺子</a>
@@ -56,26 +56,6 @@
 					<div id="markdown"></div>
 				</div>
 				<br>
-				<!-- 来必力City版安装代码 -->
-				<h3 class="colored bold" id="comment" style="display:none;">评论</h3>
-				<small class="grey">由于技术限制，若您开启了浏览器或系统的黑暗模式，评论框部分元素及控件将难以识读，敬请切换回日间模式后再留下评论。</small>
-				<div id="lv-container" data-id="city" data-uid="MTAyMC8zMTY3Ni84MjQw">
-				<script type="text/javascript">
-				   (function(d, s) {
-				       var j, e = d.getElementsByTagName(s)[0];
-
-				       if (typeof LivereTower === 'function') { return; }
-
-				       j = d.createElement(s);
-				       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-				       j.async = true;
-
-				       e.parentNode.insertBefore(j, e);
-				   })(document, 'script');
-				</script>
-				<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-				</div>
-				<!-- City版安装代码已完成 -->
 			</div>
 
 			<div class="col-lg-4 col-12">
@@ -151,7 +131,6 @@ var app = new Vue({
 			dataType: "text",
 			success:function(res){
 				document.getElementById('author').style.display = "block";
-				document.getElementById('comment').style.display = "block";
 				document.getElementById('backTop').style.display = "inline-block";
 				var Convertor = new showdown.Converter();
 				var html = Convertor.makeHtml(res);
