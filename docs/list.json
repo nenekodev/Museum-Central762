@@ -9,5 +9,18 @@
 			"avatar":"https://s1.ax1x.com/2020/07/11/UMqHqf.jpg",
 			"date":"2019-11-27"
 		}
-	]
+	],"jumboItems":[
+	{
+	  "title": "title1",
+	  "subTitle": "subtitle1",
+		"jumboImg": "https://s1.ax1x.com/2020/07/11/UMq5RA.jpg",
+		"isActive": true,
+		"link":"./product/1921mendao"
+	}, {
+	  "title": "title2",
+	  "subTitle": "subtitle2",
+		"jumboImg": "https://s1.ax1x.com/2020/07/11/UMq5RA.jpg",
+		"link":"./product/201921"
+	}
+]
 }

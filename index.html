@@ -43,7 +43,36 @@
 	<div class="container">
 		<div class="row mb-5">
 			<div class="col-lg-8 col-12" id="maincont">
-				<div id="arti" class="container mt-5">
+			  <div class="container mt-5 pt-3">
+			  	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+			  	  <ol class="carousel-indicators">
+			  	    <li data-target="#carouselExampleIndicators" v-for="(item,index) in jumboItems" :data-slide-to="index" :class="{active:item.isActive}"></li>
+			  	  </ol>
+			  	  <div class="carousel-inner">
+			  	    <div class="carousel-item " v-for="item in jumboItems" :class="{active:item.isActive}">
+			  	      <a :href="item.link">
+			  	        <div :style="{'background':'linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0.8)),url(' + item.jumboImg + ')', 'margin-bottom':0}" class="jumbotron jumbotron-fluid transdiv">
+			  	        </div>
+			  	        <div class="carousel-caption d-none d-md-block">
+			  	          <h5>{{item.title}}</h5>
+			  	          <p>{{item.subTitle}}</p>
+			  	        </div>
+			  	      </a>
+			  	    </div>
+			  	  </div>
+			  	  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+			  	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			  	    <span class="sr-only">上一个</span>
+			  	  </a>
+			  	  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+			  	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			  	    <span class="sr-only">下一个</span>
+			  	  </a>
+			  	</div>
+
+        </div>
+			  
+				<div id="arti" class="container mt-3">
 					<br>
 					<div class="row" id="cont">
 						<div class="col-12" v-for="(article,index) in arti" :key="index">
@@ -74,6 +103,11 @@
 					</p>
 					<br>
 
+          <h5 class="subtext pt-2 mt-5">联系我们</h5>
+          <p>xxxxxxx
+          </p>
+          <br>
+
 					<div>
 						<p><small>© <span class="nowrap">LJR · Transpotter 交通美学研究所</span><br>
 							<br>
@@ -92,6 +126,7 @@
 <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
 <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script src="./js/stickUp.min.js"></script>
 <script src="./js/core.js"></script>
 <script>
@@ -99,7 +134,8 @@ var app = new Vue({
 	el:'#app',
 	data(){
 		return{
-			arti:[]
+			arti:[],
+			jumboItems:[]
 		}
 	},
 	created () {
@@ -110,6 +146,7 @@ var app = new Vue({
 		.get('./docs/list.json')
 		.then(response => {
 			this.arti=response.data.arti;
+			this.jumboItems=response.data.jumboItems
 		});
 	}
 })

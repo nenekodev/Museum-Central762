@@ -73,13 +73,6 @@ html::-webkit-scrollbar-button,div::-webkit-scrollbar-button{
 .btnbox a,.btnbox a:hover{
 	background-color:transparent!important;
 }
-.btnbox:hover{
-	background:#df494f;
-	cursor:pointer;
-}
-.btnbox:hover a{
-	color: #fff!important;
-}
 
 .direction a,.direction a:hover{
 	background-color:transparent!important;
@@ -145,6 +138,10 @@ mark{
 	height: 60vh
 }
 
+.carousel-inner{
+  border-radius:10px;
+}
+
 .d-block{
 	border-radius:10px;
 }
@@ -164,7 +161,7 @@ mark{
 }
 
 #maincont,#cont .col-12{
-	padding: 5px;
+	/* padding: 5px; */
 }
 
 .card-title.home,.card-text.home{
