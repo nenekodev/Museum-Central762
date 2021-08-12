@@ -43,7 +43,7 @@
 	<div class="container">
 		<div class="row mb-5">
 			<div class="col-lg-8 col-12" id="maincont">
-			  <div class="container mt-5 pt-3">
+			  <div class="mt-5 pt-5">
 			  	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
 			  	  <ol class="carousel-indicators">
 			  	    <li data-target="#carouselExampleIndicators" v-for="(item,index) in jumboItems" :data-slide-to="index" :class="{active:item.isActive}"></li>
@@ -53,18 +53,18 @@
 			  	      <a :href="item.link">
 			  	        <div :style="{'background':'linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0.8)),url(' + item.jumboImg + ')', 'margin-bottom':0}" class="jumbotron jumbotron-fluid transdiv">
 			  	        </div>
-			  	        <div class="carousel-caption d-none d-md-block">
+			  	        <div class="carousel-caption">
 			  	          <h5>{{item.title}}</h5>
 			  	          <p>{{item.subTitle}}</p>
 			  	        </div>
 			  	      </a>
 			  	    </div>
 			  	  </div>
-			  	  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+			  	  <a class="carousel-control-prev d-none d-md-flex" href="#carouselExampleIndicators" role="button" data-slide="prev">
 			  	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 			  	    <span class="sr-only">上一个</span>
 			  	  </a>
-			  	  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+			  	  <a class="carousel-control-next d-none d-md-flex" href="#carouselExampleIndicators" role="button" data-slide="next">
 			  	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
 			  	    <span class="sr-only">下一个</span>
 			  	  </a>
@@ -72,7 +72,7 @@
 
         </div>
 			  
-				<div id="arti" class="container mt-3">
+				<div id="arti" class="mt-3">
 					<br>
 					<div class="row" id="cont">
 						<div class="col-12" v-for="(article,index) in arti" :key="index">
@@ -93,7 +93,7 @@
 
 			<div class="col-lg-4 col-12">
 				<div id="foot-index">
-				  <h5 class="subtext pt-3 mt-5">引言</h5>
+				  <h5 class="subtext pt-5 mt-5">序言</h5>
 					<h3 class="colored">驰骋中州，纵横交通</h3>
 					<br>
 					<p>上世纪五十年代末期，河南省开始兴办地方铁路。半个多世纪间，先后有16条地铁线路横贯中原大地，长度逾1,600千米。<br><br>
