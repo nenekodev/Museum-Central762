@@ -15,12 +15,12 @@
 	  "subTitle": "摄于朝杞铁路超化车站",
 		"jumboImg": "https://s1.ax1x.com/2020/07/11/UMq5RA.jpg",
 		"isActive": true,
-		"link":"./product/1921mendao"
+		"link":"./#"
 	}, {
 	  "title": "title2",
 	  "subTitle": "subtitle2",
-		"jumboImg": "https://s1.ax1x.com/2020/07/11/UMq5RA.jpg",
-		"link":"./product/201921"
+		"jumboImg": "./img/bg/bg.jpg",
+		"link":"./#"
 	}
 ]
 }
