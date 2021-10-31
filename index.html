@@ -1,6 +1,6 @@
 <html lang="zh">
 <head>
-	<link href="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="./css/base.css">
 	<link rel="stylesheet" type="text/css" href="./css/day.css" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)"> 
 	<link rel="stylesheet" type="text/css" href="./css/night.css" media="(prefers-color-scheme: dark)"> 
@@ -15,18 +15,18 @@
 <div id="app" v-cloak>
 	<nav id="nav" class="navbar fixed-top navbar-expand-lg">
 		<div class="container" id="navcontain">
-		<a href="./index.html" class="mr-5"><img class="logo" src="./img/ico/LJR.png" height="40px"><span class="d-none d-md-inline space"> · 中原铁道(数字)博物馆</span></a>
+		<a href="./index.html" class="me-5"><img class="logo" src="./img/ico/logo.png" height="40px"><span class="d-none d-md-inline space"> · 中原铁道(数字)博物馆</span></a>
 		
-		<div id="navbarlink" style="justify-content:flex-end;">
+		<div style="justify-content:flex-end;">
 		<div class="navbar-nav">
-			<div class="btnbox">
-				<a class="nav-item nav-link active">基本陈列</a>
+			<div class="btnbox nav-item">
+				<a class="nav-link active">基本陈列</a>
 			</div>
-			<div class="btnbox">
-				<a class="nav-item nav-link" href="./research">收藏研究</a>
+			<div class="btnbox nav-item">
+				<a class="nav-link" href="./research">收藏研究</a>
 			</div>
-			<div class="btnbox">
-				<a class="nav-item nav-link" href="./souvenir">博物文创</a>
+			<div class="btnbox nav-item">
+				<a class="nav-link" href="./souvenir">博物文创</a>
 			</div>
 			<!-- <div class="btnbox">
 				<a class="nav-item nav-link" href="#">铺子</a>
@@ -37,89 +37,121 @@
 	</nav>
 
 	<div class="container">
-		<div class="row mb-5">
-			<div class="col-lg-8 col-12" id="maincont">
-			  <div class="mt-5 pt-5">
-			  	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
-			  	  <ol class="carousel-indicators">
-			  	    <li data-target="#carouselExampleIndicators" v-for="(item,index) in jumboItems" :data-slide-to="index" :class="{active:item.isActive}"></li>
-			  	  </ol>
-			  	  <div class="carousel-inner">
-			  	    <div class="carousel-item " v-for="item in jumboItems" :class="{active:item.isActive}">
-			  	      <a :href="item.link">
-			  	        <div :style="{'background':'linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0.8)),url(' + item.jumboImg + ')', 'margin-bottom':0}" class="jumbotron jumbotron-fluid transdiv">
-			  	        </div>
-			  	        <div class="carousel-caption">
-			  	          <h5>{{item.title}}</h5>
-			  	          <p>{{item.subTitle}}</p>
-			  	        </div>
-			  	      </a>
-			  	    </div>
-			  	  </div>
-			  	  <a class="carousel-control-prev d-none d-md-flex" href="#carouselExampleIndicators" role="button" data-slide="prev">
-			  	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			  	    <span class="sr-only">上一个</span>
-			  	  </a>
-			  	  <a class="carousel-control-next d-none d-md-flex" href="#carouselExampleIndicators" role="button" data-slide="next">
-			  	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			  	    <span class="sr-only">下一个</span>
-			  	  </a>
-			  	</div>
-        </div>
-        
-        <div id="topics" class="mt-3">
-          <br>
-          <h2 class="inline-block">基本陈列</h2><h5 class="ml-2 subtext inline-block">Topics</h5>
-          <br>
-          <div class="row" id="hallA">
-            <div class="col-6 col-md-4">
-              <div class="card text-white bg-dark">
-                <img class="card-img" src="./img/bg/bg.jpg" style="opacity: 0.6">
-                <div class="card-img-overlay">
-                  <p class="badge badge-light home">第一章</p>
-                  <h5 class="home">[展览名称]</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-          
-        <div id="specials" class="mt-3">
-          <br>
-          <h2 class="inline-block">特别策划</h2><h5 class="ml-2 subtext inline-block">Specials</h5>
-          <br>
-          <div class="row" id="hallB">
-            <div class="col-6 col-md-4">
-            <div class="card text-white bg-dark">
-              <img class="card-img" src="./img/bg/bg.jpg" style="opacity: 0.6">
-              <div class="card-img-overlay">
-                <p class="badge badge-primary home">特展</p>
-                <h5 class="home">[展览名称]</h5>
-              </div>
-            </div>
-            </div>
-          </div>
-        </div>
-        
-        <div id="category" class="mt-3">
-          <br>
-          <h2 class="inline-block">分类</h2><h5 class="ml-2 subtext inline-block">Categories</h5>
+		<div class="row" id="maincont">
+			<div class="col-12 row">
+				<div class="col-lg-8 col-12 mt-5 pt-5">
+					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+						<div class="carousel-indicators">
+							<button type="button" data-bs-target="#carouselExampleIndicators" v-for="(item,index) in jumboItems" :data-bs-slide-to="index" :class="{active:item.isActive}"></button>
+						</div>
+						<div class="carousel-inner">
+							<div class="carousel-item " v-for="item in jumboItems" :class="{active:item.isActive}">
+								<a :href="item.link">
+									<div :style="{'background':'linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0.8)),url(' + item.jumboImg + ')', 'margin-bottom':0}" class="jumbotron jumbotron-fluid transdiv">
+									</div>
+									<div class="carousel-caption">
+										<h5>{{item.title}}</h5>
+										<p>{{item.subTitle}}</p>
+									</div>
+								</a>
+							</div>
+						</div>
+						
+						<button class="carousel-control-prev d-none d-md-flex" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">上一个</span>
+						</button>
+						<button class="carousel-control-next d-none d-md-flex" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">下一个</span>
+						</button>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-12">
+					<h5 class="pt-5 mt-5">序言 <span class="ms-2 subtext">Preface</span></h5>
+					<h3 class="colored">驰骋中州，纵横交通</h3>
 					<br>
-        </div>
-			  
+					<p>上世纪五十年代末期，河南省开始兴办地方铁路。半个多世纪间，先后有16条地铁线路横贯中原大地，长度逾1,600千米。<br><br>
+						地方铁路诞生于大跃进年代为了适应快速增长的煤、钢和木材运输需要建设的“土铁路”。木轨、锅驼机车、手工车厢……这些极富想象力的创造带来了意想不到的经济效益，逐渐由地方政府规范化运营并蓬勃发展。<br><br>
+						随着现代交通运输技术的不断演进，标准低、运量小的地方铁路逐渐失去了优势，生态位逐渐被公路蚕食。2010年前后，窄轨线路相继停运，其中一些已被拆除，另一些则至今隐藏在中州的原野上。<br><br>
+						很少有人知道，河南曾经拥有我国最发达的窄轨铁路系统。欢迎来到中原铁道 (数字) 博物馆，开启一场轨距762毫米的旅程。
+					</p>
+					<br>
+				</div>
+			</div>
+
+			<div class="col-12">
+				<div id="topics" class="mt-3">
+					<br>
+					<h2 class="inline-block">基本陈列</h2><h5 class="ms-2 subtext inline-block">Topics</h5>
+					<br>
+					<div class="row" id="hallA">
+						<div class="col-6 col-md-3" v-for="(topic,index) in topics" :key="index">
+							<a :href="topic.link">
+							<div class="card text-white bg-dark">
+								<img class="card-img" :src="topic.bgImg" style="opacity: 0.6">
+								<div class="card-img-overlay">
+									<p class="badge bg-light text-dark home">{{topic.badge}}</p>
+									<h5 class="home">{{topic.title}}</h5>
+								</div>
+							</div>
+							</a>
+						</div>
+					</div>
+				</div>
+					
+				<div id="specials" class="mt-3">
+					<br>
+					<h2 class="inline-block">特别策划</h2><h5 class="ms-2 subtext inline-block">Specials</h5>
+					<br>
+					<div class="row" id="hallB">
+						<div class="col-6 col-md-3" v-for="(stopic,index) in specials" :key="index">
+							<a :href="stopic.link">
+							<div class="card text-white bg-dark">
+								<img class="card-img" :src="stopic.bgImg" style="opacity: 0.6">
+								<div class="card-img-overlay">
+									<p class="badge bg-primary home">{{stopic.badge}}</p>
+									<h5 class="home">{{stopic.title}}</h5>
+								</div>
+							</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+				<div id="category" class="mt-3">
+					<br>
+					<h2 class="inline-block">分类</h2><h5 class="ms-2 subtext inline-block">Categories</h5>
+					<br>
+					<div class="row" id="hallC">
+						<div class="col-6 col-md-3 mt-3" v-for="(ctopic,index) in categories" :key="index">
+							<a :href="ctopic.link">
+							<div class="card text-white bg-dark">
+								<img class="card-img" :src="ctopic.bgImg" style="opacity: 0.6">
+								<div class="card-img-overlay">
+									<h3 class="home">{{ctopic.title}}</h3>
+								</div>
+							</div>
+							</a>
+						</div>
+					</div>
+
+				</div>
+				
 				<div id="arti" class="mt-3">
 					<br>
-					<h2 class="inline-block">精选文章</h2><h5 class="ml-2 subtext inline-block">Selected</h5>
+					<h2 class="inline-block">特色条目</h2><h5 class="ms-2 subtext inline-block">Selected</h5>
 					<br>
 					<div class="row" id="cont">
-						<div class="col-12" v-for="(article,index) in arti" :key="index">
+						<div class="col-12 col-md-4" v-for="(article,index) in arti" :key="index">
 							<a :href="article.addr">
 							<div class="card">
 								<img class="card-img-top" :src="article.cover">
 								<div class="card-body">
 									<h5 class="card-title home" :title="article.title">{{article.title}}</h5>
 									<p class="card-text home">{{article.subtitle}}</p>
-									<p class="card-text home"><img :src="article.avatar" class="mr-3" width="30px" style="border-radius:100%"><span class="colored">{{article.author}}</span> · <small>{{article.date}}</small></p>
+									<p class="card-text home"><img :src="article.avatar" class="me-3" width="30px" style="border-radius:100%"><span class="colored">{{article.author}}</span> · <small>{{article.date}}</small></p>
 								</div>
 							</div>
 							</a>
@@ -128,28 +160,17 @@
 				</div>				
 			</div>
 
-			<div class="col-lg-4 col-12">
-				<div id="foot-index">
-				  <h5 class="pt-5 mt-5">序言 <span class="ml-2 subtext">Preface</span></h5>
-					<h3 class="colored">驰骋中州，纵横交通</h3>
-					<br>
-					<p>上世纪五十年代末期，河南省开始兴办地方铁路。半个多世纪间，先后有16条地铁线路横贯中原大地，长度逾1,600千米。<br><br>
-					  地方铁路诞生于大跃进年代为了适应快速增长的煤、钢和木材运输需要建设的“土铁路”。木轨、锅驼机车、手工车厢……这些极富想象力的创造带来了意想不到的经济效益，逐渐由地方政府规范化运营并蓬勃发展。<br><br>
-					  随着现代交通运输技术的不断演进，标准低、运量小的地方铁路逐渐失去了优势，生态位逐渐被公路蚕食。2010年前后，窄轨线路相继停运，其中一些已被拆除，另一些则至今隐藏在中州的原野上。<br><br>
-					  很少有人知道，河南曾经拥有我国最发达的窄轨铁路系统。欢迎来到中原铁道 (数字) 博物馆，开启一场轨距762毫米的旅程。
-					</p>
-					<br>
-
-          <h5 class="subtext pt-2 mt-5">联系我们</h5>
-          <p>xxxxxxx
-          </p>
-          <br>
-
-					<div>
+			<div class="col-12 mt-2">
+				<div class="row">
+					<div class="col-12 col-md-6 mt-3">
+						<h5 class="subtext">联系我们</h5>
+						<p>LJR交通美学研究所 325616319</p>
+					</div>
+				
+					<div class="col-12 col-md-6 mt-3 right center">
+						<img class="mb-3" src="./img/ico/LJR.svg" width="80px">
 						<p><small>© <span class="nowrap">LJR · Transpotter 交通美学研究所</span><br>
-							<br>
-							<code>未经许可，禁止转载</code><br>
-							<br>
+							<code>未经许可，禁止转载</code>
 						</small></p>
 					</div>
 				</div>
@@ -160,28 +181,33 @@
 </div>
 </body>
 
-<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
-<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
 <script>
 var app = new Vue({
 	el:'#app',
 	data(){
 		return{
-			arti:[],
-			jumboItems:[]
+			arti: [],
+			jumboItems: [],
+			topics: [],
+			specials: [],
+			categories: []
 		}
 	},
-	created () {
+	created(){
 		document.title = '中原铁道(数字)博物馆';
 	},
 	mounted(){
 		axios
 		.get('./docs/list.json')
 		.then(response => {
-			this.arti=response.data.arti;
-			this.jumboItems=response.data.jumboItems
+			this.arti = response.data.arti;
+			this.jumboItems = response.data.jumboItems;
+			this.topics = response.data.topics;
+			this.specials = response.data.specials;
+			this.categories = response.data.categories
 		});
 	}
 })

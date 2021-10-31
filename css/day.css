@@ -31,3 +31,7 @@ blockquote{
 .grey,pre code{
 	color: #aaa!important;
 }
+
+.navbar-nav .nav-link {
+    color: rgba(0,0,0,.75);
+}

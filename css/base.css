@@ -2,7 +2,7 @@
 #app {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
+	font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif,consolas!important;
 	overflow-x: hidden;
 	min-height: 100%
 }
@@ -46,7 +46,6 @@ html::-webkit-scrollbar-button,div::-webkit-scrollbar-button{
 @media(max-width: 1024px){
 	#navcontain{
 		display: flex;
-		justify-content: center;
 	}
 	.navbar-nav{
 		margin-left: 2em
@@ -72,6 +71,9 @@ html::-webkit-scrollbar-button,div::-webkit-scrollbar-button{
 @media(max-width: 768px){
 	.btnbox{
 		width:4em
+	}
+	.center{
+		text-align: center;
 	}
 }
 .btnbox a,.btnbox a:hover{
@@ -227,6 +229,11 @@ mark{
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
+}
+@media(min-width: 768px){
+	.right{
+		text-align: right;
+	}
 }
 @media(min-width: 992px){
 	.isStuck{

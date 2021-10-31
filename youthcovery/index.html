@@ -1,6 +1,6 @@
 <html>
 <head>
-	<link href="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://cdn.bootcss.com/animate.css/3.7.2/animate.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="../css/base.css">
 
@@ -17,18 +17,18 @@
 <div id="app" v-cloak>
 	<nav id="nav" class="navbar fixed-top navbar-expand-lg">
 		<div class="container" id="navcontain">
-		<a href="./../index.html" class="mr-5"><img class="logo" src="./../img/ico/LJR.png" height="40px"><span class="d-none d-md-inline space"> · 中原铁道(数字)博物馆</span></a>
+		<a href="./../index.html" class="me-5"><img class="logo" src="./../img/ico/logo.png" height="40px"><span class="d-none d-md-inline space"> · 中原铁道(数字)博物馆</span></a>
 		
-		<div id="navbarlink" style="justify-content:flex-end;">
+		<div style="justify-content:flex-end;">
 		<div class="navbar-nav">
-			<div class="btnbox">
-				<a class="nav-item nav-link active">基本陈列</a>
+			<div class="btnbox nav-item">
+				<a class="nav-link active">基本陈列</a>
 			</div>
-			<div class="btnbox">
-				<a class="nav-item nav-link" href="./research">收藏研究</a>
+			<div class="btnbox nav-item">
+				<a class="nav-link" href="./research">收藏研究</a>
 			</div>
-			<div class="btnbox">
-				<a class="nav-item nav-link" href="./souvenir">博物文创</a>
+			<div class="btnbox nav-item">
+				<a class="nav-link" href="./souvenir">博物文创</a>
 			</div>
 			<!-- <div class="btnbox">
 				<a class="nav-item nav-link" href="#">铺子</a>
@@ -38,7 +38,7 @@
 		</div>
 	</nav>
 
-	<div id="top"  v-for="(meta,index) in meta" :key="index" class="jumbotron jumbotron-fluid mt-4" :style="{backgroundImage:'url('+meta.hero+')'}">
+	<div id="top" v-for="(meta,index) in meta" :key="index" class="jumbotron jumbotron-fluid mt-4 mb-5" :style="{backgroundImage:'url('+meta.hero+')'}">
 	</div>
 
 	<div class="container mb-5">
@@ -64,7 +64,7 @@
 					<br>
 					<div class="infocont mt-3" v-for="(info,index) in author" :key="index">
 						<img :src='info.avatar'/>
-						<div class="ml-3">
+						<div class="ms-3">
 							<h5>{{info.name}}</h5>
 							<h6 class="subtext">{{info.intro}}</h6>
 						</div>
@@ -97,10 +97,11 @@
 
 </body>
 
-<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
-<script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/showdown/1.9.0/showdown.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 <script src="../js/stickUp.min.js"></script>
 <script src="../js/core.js"></script>
 <script>
