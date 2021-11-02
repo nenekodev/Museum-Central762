@@ -13,7 +13,7 @@
 		{
 			"title": "停在站内的轨道车",
 			"subTitle": "摄于朝杞铁路超化车站",
-			"jumboImg": "https://s1.ax1x.com/2020/07/11/UMq5RA.jpg",
+			"jumboImg": "./img/bg/bg.jpg",
 			"isActive": true,
 			"link":"./#"
 		}, {
@@ -33,34 +33,34 @@
 		{
 			"title": "周口铁路公园",
 			"badge": "特展",
-			"bgImg": "./img/bg/bg.jpg",
+			"bgImg": "./img/bg/ZK.jpg",
 			"link": "./#"
 		},{
 			"title": "老河口水泥厂窄轨",
 			"badge": "特展",
-			"bgImg": "./img/bg/bg.jpg",
+			"bgImg": "./img/bg/LHK.jpg",
 			"link": "./#"
 		}
 	],"categories":[
 		{
 			"title": "历史",
-			"bgImg": "#",
+			"bgImg": "./img/bg/history.jpg",
 			"link": "./#"
 		},{
 			"title": "线路",
-			"bgImg": "#",
+			"bgImg": "./img/bg/route.jpg",
 			"link": "./#"
 		},{
 			"title": "车站",
-			"bgImg": "#",
+			"bgImg": "./img/bg/station.jpg",
 			"link": "./#"
 		},{
 			"title": "车辆",
-			"bgImg": "#",
+			"bgImg": "./img/bg/train.jpg",
 			"link": "./#"
 		},{
 			"title": "资料",
-			"bgImg": "#",
+			"bgImg": "./img/bg/docu.jpg",
 			"link": "./#"
 		}
 	]
