@@ -65,17 +65,26 @@ html::-webkit-scrollbar-button,div::-webkit-scrollbar-button{
 	display: inline-block;
 	max-width:120px;
 	border-radius: 2em;
-	padding:8px 12px;
+	padding:8px 10px 8px 0px;
 	transition:0.2s ease-in
 }
+
+.space{
+	letter-spacing: 0.3em
+}
+
 @media(max-width: 768px){
 	.btnbox{
-		width:4em
+		width:3em
 	}
 	.center{
 		text-align: center;
 	}
+	.space{
+		letter-spacing:0.1em;
+	}
 }
+
 .btnbox a,.btnbox a:hover{
 	background-color:transparent!important;
 }
@@ -164,10 +173,6 @@ mark{
 
 .card-img{
   border-radius:10px;
-}
-
-.space{
-	letter-spacing: 0.3em
 }
 
 #maincont,#cont .col-12{
