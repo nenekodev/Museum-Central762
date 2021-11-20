@@ -92,11 +92,11 @@
 						<p>投稿 · 联系请至 <code>LJRstudio@aliyun.com</code></p>
 						<div class=" center">
 							<img class="mb-3 mt-5" src="../img/ico/10th.svg" style="height:58px;max-width: 100%;">
-							<p><small><span class="nowrap">© LJR · Transpotter 交通美学研究所</span><span class="d-none d-md-inline me-3"></span>
+							<p><small><span class="nowrap">© LJR / The Charm of Transport</span><span class="d-none d-md-inline me-3"></span>
 								<span class="nowrap">© A Project by Toocheer </span><br><br>
 								<code>未经许可，禁止转载</code>
 							</small></p>
-							<h5><a class="badge badge-pill d-none" id="backTop">▲ 返回顶部</a></h5>
+							<h5><a class="badge badge-pill d-none" id="backTop" href="#">▲ 返回顶部</a></h5>
 						</div>
 					</div>
 				</div>
@@ -109,7 +109,7 @@
 <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 <script src="../js/stickUp.min.js"></script>
 <script src="../js/core.js"></script>
@@ -134,26 +134,24 @@ var app = new Vue({
 				this.author = response.data.author;
 				document.title = response.data.pagetitle + " / 中原铁道(数字)博物馆";
 			});
-		$(document).ready(function(){
-			var obj = $.ajax({
-				type:"get",
-				url: "../docs/youthcovery/" + currentArti + "/" + currentArti + ".md",
-				dataType: "text",
-				success:function(res){
-					$('#author').removeClass('d-none');
-					$('#backTop').removeClass('d-none');
-					var Convertor = new showdown.Converter();
-					var html = Convertor.makeHtml(res);
-					document.getElementById('markdown').innerHTML = html;
-				},
-				error:function(e){
-					$('#NotFound').removeClass('d-none');
-					$('#NotFound').addClass('d-flex');
-				}
+		axios
+			.get('../docs/youthcovery/' + currentArti + '/' + currentArti + '.md')
+			.then(response => {
+				var Convertor = new showdown.Converter();
+				$('#markdown').html(Convertor.makeHtml(response.data));
+				$('#author').removeClass('d-none');
+				$('#backTop').removeClass('d-none');
+			})
+			.catch(error => {
+				$('#NotFound').removeClass('d-none');
+				$('#NotFound').addClass('d-flex');
 			});
-		});
-		$("#backTop").click(function(){
-			$('body,html').animate({scrollTop:0}, 500);
+	},
+	updated(){
+		Zepto(function($) {
+			if(document.body.clientWidth >= 980){
+				$('#foot').stickUp();
+			}
 		});
 	}
 })

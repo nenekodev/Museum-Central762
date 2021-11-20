@@ -1,11 +1,6 @@
-jQuery(function($){
-	$(document).ready(function(){
-		if(document.body.clientWidth>=992){
-			$('#foot').stickUp();
-		}
-	});
+Zepto(function($) {
 	$(window).resize(function(){
-		if(document.body.clientWidth>=992){
+		if(document.body.clientWidth >= 980){
 			$('#foot').stickUp();
 		}else{
 			$('#foot').removeClass('stuckMenu');
@@ -15,11 +10,11 @@ jQuery(function($){
 	});
 });
 
-function GetQueryString()
+function GetLinkArgs()
 {
 	var reg = new RegExp("(^|&)([^&]*)(&|$)");
 	var r = window.location.search.substr(1).match(reg);//search,查询？后面的参数，并匹配正则
-	if(r!=null)return  unescape(r[2]); return null;
+	if(r != null)return  unescape(r[2]); return null;
 }
-var currentArti = GetQueryString();
+var currentArti = GetLinkArgs();
 

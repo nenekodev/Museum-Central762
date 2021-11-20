@@ -2,9 +2,13 @@
 #app {
 	overflow-x: hidden;
 	min-height: 100%;
-	font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif,consolas!important;
+	font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif!important;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+code{
+	font-family: consolas,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif!important;
 }
 
 html::-webkit-scrollbar-button,div::-webkit-scrollbar-button {
