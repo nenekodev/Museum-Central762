@@ -67,4 +67,52 @@ function renderMarkdown(type, linkArg) {
 		});
 }
 
-
+function renderPage(currentPage){
+  var app = new Vue({
+    el: '#app',
+    data() {
+      switch (currentPage) {
+        case 'index':
+          return {
+            arti: [],
+            jumboItems: [],
+            topics: [],
+            specials: [],
+            categories: []
+          }
+          break;
+        case 'exhibition':
+          return {
+            meta: [],
+            isExpand: null,
+            expand: [],
+            author: []
+          }
+          break;
+      }
+    },
+    created() {
+      document.title = '中原铁道(数字)博物馆';
+    },
+    mounted() {
+      switch (currentPage) {
+        case 'index':
+          getIndexMeta();
+          console.log(Vue.data);
+          break;
+        case 'exhibition':
+          getArtiMeta('exhibition', currentArti);
+          renderMarkdown('exhibition', currentArti);
+          break;
+      }
+    },
+    updated() {
+      switch (currentPage) {
+        case 'index':
+          break;
+        default:
+          stickSidebar();
+      }
+    }
+  })
+}
