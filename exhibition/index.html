@@ -19,7 +19,7 @@
 		<div class="container" id="navcontain">
 		<a href="../">
 			<div class="d-flex" style="align-items:center;">
-				<img class="logo d-inline-block" src="../img/ico/logo.png" height="40px"><span class="d-md-inline me-1">·</span>
+				<img class="logo d-inline-block" src="../img/ico/logo.png" style="height: 40px"><span class="d-md-inline me-1">·</span>
 				<div class="logo d-inline-block space" style="min-width:100px">中原铁道<span class="d-inline d-md-none"><br></span>(数字)博物馆</div>
 			</div>
 		</a>
@@ -101,19 +101,18 @@
 			</div>
 		</div>
 	</div>
-
+</div>
 </body>
 
-<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/3.1.5/vue.global.prod.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 <script src="../js/stickUp.min.js"></script>
-<script src="../js/core.js"></script>
+<script src="../js/utils.js"></script>
 <script>
-var app = new Vue({
-	el:'#app',
+const app = Vue.createApp({
 	data(){
 		return{
 			meta:[],
@@ -123,12 +122,22 @@ var app = new Vue({
 		}
 	},
 	mounted(){
-		getArtiMeta('exhibition', currentArti);
+		axios
+		.get('../docs/exhibition/' + currentArti + '/meta.json')
+		.then((response) => {
+			this.meta = response.data.meta
+			this.isExpand = response.data.isExpand
+			this.expand = response.data.expand
+			this.author = response.data.author
+			document.title = response.data.pagetitle + ' / 中原铁道(数字)博物馆'
+		})
 		renderMarkdown('exhibition', currentArti);
 	},
 	updated(){
 		stickSidebar();
 	}
 })
+
+app.mount('#app');
 </script>
 </html>

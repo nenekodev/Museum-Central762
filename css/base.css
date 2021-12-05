@@ -77,7 +77,7 @@ html::-webkit-scrollbar-button,div::-webkit-scrollbar-button {
 
 .btnbox {
 	display: inline-block;
-	padding: 8px 10px 8px 0px;
+	padding: 8px 0px 8px 10px;
 	max-width: 120px;
 	border-radius: 2em;
 	transition: 0.2s ease-in;
@@ -300,4 +300,8 @@ mark {
 	.isStuck {
 		max-width: 420px!important;
 	}
+}
+
+.logo img{
+	height: 40px!important;
 }
