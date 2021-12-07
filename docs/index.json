@@ -37,34 +37,34 @@
 		{
 			"title": "周口铁路公园",
 			"badge": "特展",
-			"bgImg": "./img/bg/ZK.jpg",
+			"bgImg": "https://s4.ax1x.com/2021/12/07/og88SA.jpg",
 			"link": "./#"
 		},{
 			"title": "老河口水泥厂窄轨",
 			"badge": "特展",
-			"bgImg": "./img/bg/LHK.jpg",
+			"bgImg": "https://s4.ax1x.com/2021/12/07/og8GQI.jpg",
 			"link": "./#"
 		}
 	],"categories":[
 		{
 			"title": "历史",
-			"bgImg": "./img/bg/history.jpg",
+			"bgImg": "https://s4.ax1x.com/2021/12/07/og8eL6.jpg",
 			"link": "./#"
 		},{
 			"title": "线路",
-			"bgImg": "./img/bg/route.jpg",
+			"bgImg": "https://s4.ax1x.com/2021/12/07/og8VQ1.jpg",
 			"link": "./#"
 		},{
 			"title": "车站",
-			"bgImg": "./img/bg/station.jpg",
+			"bgImg": "https://s4.ax1x.com/2021/12/07/og8Zsx.jpg",
 			"link": "./#"
 		},{
 			"title": "车辆",
-			"bgImg": "./img/bg/train.jpg",
+			"bgImg": "https://s4.ax1x.com/2021/12/07/og8udO.jpg",
 			"link": "./#"
 		},{
 			"title": "资料",
-			"bgImg": "./img/bg/docu.jpg",
+			"bgImg": "https://s4.ax1x.com/2021/12/07/og8neK.jpg",
 			"link": "./#"
 		}
 	]
