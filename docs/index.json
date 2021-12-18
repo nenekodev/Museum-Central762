@@ -20,16 +20,29 @@
 			"jumboImg": "./img/bg/bg.jpg",
 			"isActive": true,
 			"link":"./#"
-		}, {
+		},
+		{
 			"title": "title2",
 			"subTitle": "subtitle2",
 			"jumboImg": "./img/bg/bg.jpg",
 			"link":"./#"
 		}
-	],"topics":[
+	],"tours":[
 		{
-			"title": "[展览名称]",
-			"badge": "第一章",
+			"title": "新郑铁路",
+			"badge": "新郑铁路",
+			"bgImg": "./img/bg/bg.jpg",
+			"link": "./#"
+		},
+		{
+			"title": "许昌铁路",
+			"badge": "许昌铁路",
+			"bgImg": "./img/bg/bg.jpg",
+			"link": "./#"
+		},
+		{
+			"title": "老河口铁路",
+			"badge": "老河口铁路",
 			"bgImg": "./img/bg/bg.jpg",
 			"link": "./#"
 		}
@@ -39,7 +52,8 @@
 			"badge": "特展",
 			"bgImg": "https://s4.ax1x.com/2021/12/07/og88SA.jpg",
 			"link": "./#"
-		},{
+		},
+		{
 			"title": "老河口水泥厂窄轨",
 			"badge": "特展",
 			"bgImg": "https://s4.ax1x.com/2021/12/07/og8GQI.jpg",
@@ -50,19 +64,23 @@
 			"title": "历史",
 			"bgImg": "https://s4.ax1x.com/2021/12/07/og8eL6.jpg",
 			"link": "./#"
-		},{
+		},
+		{
 			"title": "线路",
 			"bgImg": "https://s4.ax1x.com/2021/12/07/og8VQ1.jpg",
 			"link": "./#"
-		},{
+		},
+		{
 			"title": "车站",
 			"bgImg": "https://s4.ax1x.com/2021/12/07/og8Zsx.jpg",
 			"link": "./#"
-		},{
+		},
+		{
 			"title": "车辆",
 			"bgImg": "https://s4.ax1x.com/2021/12/07/og8udO.jpg",
 			"link": "./#"
-		},{
+		},
+		{
 			"title": "资料",
 			"bgImg": "https://s4.ax1x.com/2021/12/07/og8neK.jpg",
 			"link": "./#"
