@@ -6,15 +6,16 @@
 	<link rel="stylesheet" type="text/css" href="./css/night.css" media="(prefers-color-scheme: dark)"> 
 
 	<link rel="shortcut icon" href="./img/ico/favicon.ico"/>
+	<title>中原铁道(数字)博物馆</title>
 
 	<meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 
 <body>
-<div id="app" v-cloak>
+<div id="app">
 	<nav id="nav" class="navbar fixed-top navbar-expand-lg">
-		<div class="container" id="navcontain">
+		<div class="container-xl" id="navcontain">
 		<a href="./">
 			<div class="d-flex" style="align-items:center;">
 				<img class="logo d-inline-block" src="./img/ico/logo.png" style="height: 40px"><span class="d-md-inline me-1">·</span>
@@ -51,13 +52,13 @@
 		</div>
 	</nav>
 
-	<div class="container">
+	<div class="container-xl">
 		<div class="row" id="maincont">
 			<div class="col-12">
 				<div class="row">
-				<div class="col-12 mt-5 pt-3">
+				<div class="col-12 mt-6">
 					<div class="alert alert-danger" style="text-align: center;">
-						<a href="#"><b>2021.1</b> · 数字博物馆一期更新日志 ›</a>
+						<a :href="update.link" v-html="update.info"></a>
 					</div>
 				</div>
 				<div class="col-lg-8 col-12 mt-3">
@@ -68,7 +69,7 @@
 						<div class="carousel-inner">
 							<div class="carousel-item " v-for="item in jumboItems" :class="{active:item.isActive}">
 								<a :href="item.link">
-									<div :style="{'background':'linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0.8)),url(' + item.jumboImg + ')', 'margin-bottom':0}" class="jumbotron jumbotron-fluid transdiv">
+									<div :style="{'background':'linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0.8)),url(' + item.jumboImg + ')', 'margin-bottom':0}" class="jumbotron jumbotron-fluid height-60vh">
 									</div>
 									<div class="carousel-caption">
 										<h5>{{item.title}}</h5>
@@ -98,18 +99,17 @@
 				</div>
 			</div>
 
-			<div class="col-12">
-				<div id="topics" class="mt-3">
-					<br>
-					<h2 class="d-inline-block bold">漫游</h2><h5 class="ms-2 subtext d-inline-block">Virtual Tour</h5>
-					<div class="row" id="hallA">
-						<div class="col-6 col-md-3" v-for="(tour,index) in tours" :key="index">
-							<a :href="tour.link">
-							<div class="card text-white bg-dark mt-3">
-								<img class="card-img" :src="tour.bgImg" style="opacity: 0.6">
+			<div class="col-12" id="content">
+				<div id="virtualtour" class="anchor mt-3">
+					<div class="row">
+						<div class="col-12 col-sm-6 col-lg-4" v-for="(item,index) in categories" :key="index">
+							<a :href="item.link">
+							<div class="card text-dark mt-3">
+								<img class="card-img" :src="item.bgImg">
 								<div class="card-img-overlay">
-									<p class="badge bg-light text-dark home">{{tour.badge}}</p>
-									<h4 class="home">{{tour.title}}</h4>
+									<h2>{{item.title}}</h2>
+									<h5 class="subtext">{{item.subtitle}}</h5>
+									<p>{{item.details}}</p>
 								</div>
 							</div>
 							</a>
@@ -117,62 +117,6 @@
 					</div>
 				</div>
 					
-				<div id="specials" class="mt-3">
-					<br>
-					<h2 class="d-inline-block bold">特别策划</h2><h5 class="ms-2 subtext d-inline-block">Specials</h5>
-					<div class="row" id="hallB">
-						<div class="col-6 col-md-3" v-for="(stopic,index) in specials" :key="index">
-							<a :href="stopic.link">
-							<div class="card text-white bg-dark mt-3">
-								<img class="card-img" :src="stopic.bgImg" style="opacity: 0.6">
-								<div class="card-img-overlay">
-									<p class="badge bg-primary home">{{stopic.badge}}</p>
-									<h4 class="home">{{stopic.title}}</h4>
-								</div>
-							</div>
-							</a>
-						</div>
-					</div>
-				</div>
-				
-				<div id="category" class="mt-3">
-					<br>
-					<h2 class="d-inline-block bold">分类</h2><h5 class="ms-2 subtext d-inline-block">Categories</h5>
-					<br>
-					<div class="row" id="hallC">
-						<div class="col-6 col-md-2 mt-3" v-for="(ctopic,index) in categories" :key="index">
-							<a :href="ctopic.link">
-							<div class="card text-black-50">
-								<img class="card-img" :src="ctopic.bgImg" style="opacity: 0.6">
-								<div class="card-img-overlay">
-									<h3 class="home">{{ctopic.title}}</h3>
-								</div>
-							</div>
-							</a>
-						</div>
-					</div>
-
-				</div>
-				
-				<div id="arti" class="mt-3">
-					<br>
-					<h2 class="d-inline-block bold">特色条目</h2><h5 class="ms-2 subtext d-inline-block">Selected</h5>
-					<br>
-					<div class="row" id="cont">
-						<div class="col-12 col-md-4" v-for="(article,index) in arti" :key="index">
-							<a :href="article.addr">
-							<div class="card">
-								<img class="card-img-top" :src="article.cover">
-								<div class="card-body">
-									<h5 class="card-title home" :title="article.title">{{article.title}}</h5>
-									<p class="card-text home">{{article.subtitle}}</p>
-									<p class="card-text home"><img :src="article.avatar" class="me-3" style="width: 30px;border-radius:100%"><span>{{article.author}}</span> · <small>{{article.date}}</small></p>
-								</div>
-							</div>
-							</a>
-						</div>
-					</div>
-				</div>				
 			</div>
 
 			<div class="col-12 mt-5 mb-4">
@@ -181,6 +125,7 @@
 						<h4 class="d-inline-block bold">联系我们</h4><h5 class="ms-2 subtext d-inline-block">Contact Us</h5>
 						<p class="mt-2 mb-0">LJR交通美学研究所 · QQ群 <code>325616319</code></p>
 						<p class="mt-2">投稿 · 联系请至 <code>LJRstudio@aliyun.com</code></p>
+						<small class="subtext"><a href="#">帮助</a> · <a href="#">隐私政策</a> · <a href="#">更新日志</a></small>
 					</div>
 				
 					<div class="col-12 col-md-6 mt-3 right center">
@@ -206,28 +151,26 @@
 const app = Vue.createApp({
 	data(){
 		return{
+			update: [],
 			intro: [],
-			arti: [],
 			jumboItems: [],
-			tours: [],
-			specials: [],
 			categories: []
 		}
 	},
 	created(){
-		document.title = '中原铁道(数字)博物馆';
-	},
-	mounted(){
 		axios
 		.get('./docs/index.json')
 		.then(response => {
+			this.update = response.data.update
 			this.intro = response.data.intro
-			this.arti = response.data.arti
 			this.jumboItems = response.data.jumboItems
-			this.tours = response.data.tours
-			this.specials = response.data.specials
 			this.categories = response.data.categories
-		})
+		});
+	},
+	methods: {
+		scrollToPosition(ID) {
+			document.getElementById(ID).scrollIntoView()
+		}
 	}
 })
 

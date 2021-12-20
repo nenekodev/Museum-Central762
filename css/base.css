@@ -1,4 +1,8 @@
 /*app-base*/
+html, body {
+	scroll-behavior: smooth;
+}
+
 #app {
 	overflow-x: hidden;
 	min-height: 100%;
@@ -46,6 +50,7 @@ html::-webkit-scrollbar-button,div::-webkit-scrollbar-button {
 .nav-link > span {
 	display: inline-block;
 }
+
 .navbar-toggler:focus {
 	box-shadow: none!important;
 }
@@ -61,34 +66,12 @@ html::-webkit-scrollbar-button,div::-webkit-scrollbar-button {
 
 @media(max-width: 768px) {
 	.nav-item {
-		/*text-align: center;*/
 		margin: 0.6em 0.6em;
 	}
 
 	.center {
 		text-align: center;
-	}/*
-
-	.space {
-		letter-spacing: normal;
-	}*/
-}
-
-.btnbox a,.btnbox a:hover {
-	background-color: transparent!important;
-}
-
-.direction a,.direction a:hover {
-	background-color: transparent!important;
-}
-
-.direction:hover {
-	background: transparent;
-	cursor: pointer;
-}
-
-.direction:hover a {
-	color: #df494f!important;
+	}
 }
 
 pre {
@@ -104,7 +87,7 @@ pre {
 a {
 	color: inherit;
 	text-decoration: none!important;
-	transition: 0.3s!important;
+	transition: 0.3s !important;
 }
 
 h6 a {
@@ -124,16 +107,14 @@ mark {
 	font-weight: bolder;
 }
 
-.colored,.active {
+.colored, .active, .active > span {
 	color: #df494f!important;
 }
 
-.subtext {
-	color: #aaa;
-	transition: 0.1s!important;
+.anchor{
+	scroll-margin-top: 56px;
+	scroll-snap-margin: 56px;
 }
-
-
 
 @media (min-width: 992px) and (max-width: 1200px) {
 	.nav-link > .subtext{
@@ -142,20 +123,26 @@ mark {
 }
 
 /*--------------------*/
-/*app-components*/
-
-[v-cloak] {
-	display: none!important;
-}
-/*--------------------*/
 /*home-components*/
 .jumbotron {
-	height: 60vh;
 	background-position: center!important;
 	background-size: cover!important;
 	background-repeat: no-repeat!important;
 }
 
+.mt-6{
+	margin-top: 56px;
+}
+
+@media(max-width: 992px){
+	.mt-6{
+		margin-top: 64px;
+	}
+}
+
+.height-60vh{	
+	height: 60vh;
+}
 .carousel-inner {
 	border-radius: 10px;
 }
@@ -179,9 +166,6 @@ mark {
 	border-radius: 10px;
 }
 
-#maincont,#cont .col-12 {
-	/* padding: 5px; */
-}
 
 .card-title.home,.card-text.home {
 	overflow: hidden;
@@ -197,10 +181,6 @@ mark {
 
 .card-text {
 	color: #aaa;
-}
-
-.inside {
-	width: 100%;
 }
 
 #markdown p img {
@@ -228,12 +208,6 @@ mark {
 
 .navbar-brand {
 	font-size: 1.1em;
-}
-
-#typetop {
-	display: none;
-	margin-right: calc(50% - 1.5em);
-	cursor: pointer!important;
 }
 
 #markdown a {
@@ -267,16 +241,6 @@ mark {
 	.isStuck {
 		max-width: 350px;
 	}
-}
-
-#backTop {
-	background-color: #df494f;
-	color: #f2f2f2;
-	cursor: pointer;
-}
-
-#backTop:hover {
-	color: #fff!important;
 }
 
 @media (min-width: 1200px){

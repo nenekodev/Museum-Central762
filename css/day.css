@@ -38,3 +38,7 @@ blockquote {
 .navbar-nav .nav-link {
 	color: rgba(0,0,0,.75);
 }
+
+.subtext {
+	color: #aaa;
+}

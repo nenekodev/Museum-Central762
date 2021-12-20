@@ -42,3 +42,4 @@ function renderMarkdown(type, linkArg) {
       $('#NotFound').addClass('d-flex')
     })
 }
+
