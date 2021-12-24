@@ -1,9 +1,6 @@
 /*app-base*/
 html, body {
 	scroll-behavior: smooth;
-}
-
-#app {
 	overflow-x: hidden;
 	min-height: 100%;
 	font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif!important;
@@ -107,7 +104,7 @@ mark {
 	font-weight: bolder;
 }
 
-.colored, .active, .active > span {
+.colored, .nav-link.active, .nav-link.active > span, .nav-link.nuxt-link-exact-active, .nav-link.nuxt-link-exact-active > span {
 	color: #df494f!important;
 }
 
@@ -251,4 +248,20 @@ mark {
 
 .logo img{
 	height: 40px!important;
+}
+
+#markdown > h1, h2, h3, h4, h5{
+	font-weight: bolder;
+}
+
+blockquote {
+	padding: 1.5em 1.5em 0.5em 1.5em;
+	border-radius: 0.3em;
+}
+
+.important {
+	-webkit-text-emphasis: dot;
+    text-emphasis: dot;
+    -webkit-text-emphasis-position: under;
+    text-emphasis-position: under;
 }
