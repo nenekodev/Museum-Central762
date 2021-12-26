@@ -10,9 +10,13 @@
 	
 		<div class="col-12 col-md-6 mt-3 right center">
 			<img class="mb-3" src="/img/10th.svg" style="height:58px;max-width: 100%;">
-			<p class="mb-1"><small><span class="nowrap">© LJR / The Charm of Transport</span><span class="d-none d-md-inline me-3"></span>
-				<span class="nowrap">© A Project by <a href="https://github.com/Toocheer">Toocheer ›</a> </span></small></p>
-			<small><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/"><img alt="知识共享许可协议" style="width:88px" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a></small>
+			<small>
+				<span class="nowrap">© LJR「驰骋中州」工作坊 · A Project by <a href="https://github.com/Toocheer">Toocheer ›</a> </span>
+				<br>
+				<span>本站全部内容禁止商业使用 · 内容除另有声明外，均在 CC BY-NC-SA 3.0 CN 许可协议下提供</span>
+				<br>
+				<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/"><img alt="知识共享许可协议" style="width:88px" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>
+			</small>
 		</div>
 	</div>
 </div>
