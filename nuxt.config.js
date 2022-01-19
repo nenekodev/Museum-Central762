@@ -4,6 +4,9 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
+    htmlAttrs: { // 这里修改app.html里面的html上的{{ HTML_ATTRS }}属性
+      lang: 'zh',
+    },
     title: '中原铁道（数字）博物馆',
     meta: [
       { charset: 'utf-8' },
@@ -55,6 +58,6 @@ export default {
   },
 
   generate: {
-    routes: ['/about/help', '/about/agreement', '/about/privacy', '/about/update']
+    routes: ['/about/help', '/about/agreement', '/about/privacy', '/about/update', '/virtualtour/chaoqi', '/virtualtour/xudan']
   }
 }

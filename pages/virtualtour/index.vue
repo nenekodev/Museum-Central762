@@ -1,13 +1,13 @@
 <template>
 <div>
     <v-navbar />
-    <v-headjumbo :title="page.title" :subtitle="page.subtitle" :intro="page.intro" />
+    <v-headjumbo :title="page.title" :subtitle="page.subtitle" :intro="page.intro"/>
 
 	<div class="container-xl">
 		<div class="row" id="maincont">
 			<div class="col-12" id="content">
-				<v-cardlist isTitleOn="false" :list="tours" color="bg-light text-dark"/>
-				<v-cardlist isTitleOn="true" title="特别展出" subtitle="Specials" :list="specials" color="bg-danger text-light" />
+				<v-cardlist :list="tours" color="bg-light text-dark"/>
+				<!-- <v-cardlist isTitleOn title="特别展出" subtitle="Specials" :list="specials" color="bg-danger text-light" /> -->
 			</div>
 			<v-footer />
 		</div>
@@ -27,7 +27,7 @@ export default {
 			page: {
 				"title": "虚拟漫游",
 				"subtitle": "Virtual Tour",
-				"intro": "intro"
+				"intro": "坐地日行千万里，探寻中原大地硕果累累的窄轨遗迹"
 			},
 			tours: [],
 			specials: []
@@ -35,7 +35,7 @@ export default {
 	},
 	created() {
 		axios
-		.get('/docs/index.json')
+		.get('/docs/tour.json')
 		.then(response => {
 			this.tours = response.data.tours
 			this.specials = response.data.specials
