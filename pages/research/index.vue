@@ -21,6 +21,9 @@
 import axios from 'axios';
 export default {
   name: 'ResearchPage',
+  head: {
+		title: '研究 / 中原铁道（数字）博物馆'
+	},
   data() {
 		return {
 			page: {
@@ -29,9 +32,6 @@ export default {
 				"intro": "提供研究河南地方铁路的资料和成果"
 			}
 		}
-	},
-	created() {
-		document.title = '研究 / 中原铁道（数字）博物馆'
 	},
 	methods: {
 		scrollToPosition(ID) {

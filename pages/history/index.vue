@@ -1,13 +1,12 @@
 <template>
 <div>
-    <v-navbar />
-    <v-headjumbo :title="page.title" :subtitle="page.subtitle" :intro="page.intro"/>
+  <v-navbar />
+  <v-headjumbo :title="page.title" :subtitle="page.subtitle" :intro="page.intro"/>
 
 	<div class="container-xl">
 		<div class="row" id="maincont">
 			<div class="col-12" id="content">
-				<v-cardlist :list="historylist" color="bg-light text-dark"/>
-				<!-- <v-cardlist isTitleOn title="特别展出" subtitle="Specials" :list="specials" color="bg-danger text-light" /> -->
+				<div id="markdown" class="mt-5 mb-5"></div>
 			</div>
 			<v-footer />
 		</div>
@@ -32,12 +31,16 @@ export default {
 			historylist: []
 		}
 	},
-	created() {
+	mounted(){
 		axios
-		.get('/docs/history.json')
-		.then(response => {
-			this.historylist = response.data.history
-		});
+		.get('/docs/history/history.md')
+		.then((response) => {
+			var Convertor = new showdown.Converter()
+			$('#markdown').html(Convertor.makeHtml(response.data))
+		})
+		.catch((error) => {
+			console.log(error)
+		})
 	},
 	methods: {
 		scrollToPosition(ID) {

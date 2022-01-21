@@ -5,12 +5,11 @@
 
 	<div class="container-xl">
 		<div class="row" id="maincont">
-			<div class="col-12" id="content">
-				<div id="markdown" class="mt-5 mb-5"></div>
-				
-				<v-footer />
+			<div class="col-12" v-for="(item, index) in list" :key="index">
+				<v-album :list="item" :scale="meta.scale" />
 			</div>
 		</div>
+		<v-footer />
 	</div>
 </div>
 </template>
@@ -18,7 +17,7 @@
 <script>
 import axios from 'axios';
 export default {
-	name: 'AboutPage',
+	name: 'LifeDetailPage',
 	head() {
 		return{
 			title: `${this.meta.title} / 中原铁道（数字）博物馆`
@@ -28,27 +27,20 @@ export default {
 		return{
 			meta: {
 				"title": "",
-				"subtitle": ""
-			}
+				"subtitle": "",
+				"scale": ""
+			},
+			list: []
 		}
 	},
 	created(){
 		axios
-		.get('/docs/history/' + this.$route.params.id + '/meta.json')
+		.get('/docs/life/' + this.$route.params.id + '/' + this.$route.params.id + '.json')
 		.then((response) => {
 			this.meta.title = response.data.title
 			this.meta.subtitle = response.data.subtitle
-		})
-	},
-	mounted(){
-		axios
-		.get('/docs/history/' + this.$route.params.id + '/' + this.$route.params.id + '.md')
-		.then((response) => {
-			var Convertor = new showdown.Converter()
-			$('#markdown').html(Convertor.makeHtml(response.data))
-		})
-		.catch((error) => {
-			console.log(error)
+			this.meta.scale = response.data.scale
+			this.list = response.data.list
 		})
 	},
 	updated(){

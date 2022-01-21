@@ -17,7 +17,7 @@
 <script>
 import axios from 'axios';
 export default {
-	name: 'TourPage',
+	name: 'TourDetailPage',
 	head() {
 		return{
 			title: `${this.meta.title} / 中原铁道（数字）博物馆`
@@ -33,7 +33,6 @@ export default {
 		}
 	},
 	created(){
-		// console.log(this.$route.params.tour)
 		axios
 		.get('/docs/tour/' + this.$route.params.tour + '/meta.json')
 		.then((response) => {
