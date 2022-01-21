@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 export default {
 	name: 'TourDetailPage',
 	head() {
@@ -33,13 +32,10 @@ export default {
 		}
 	},
 	created(){
-		axios
-		.get('/docs/tour/' + this.$route.params.tour + '/meta.json')
-		.then((response) => {
-			this.meta.title = response.data.title
-			this.meta.subtitle = response.data.subtitle
-			this.tours = response.data.tours
-		})
+		let data = require('../../static/docs/tour/' + this.$route.params.tour + '/meta.json')
+		this.meta.title = data.title
+		this.meta.subtitle = data.subtitle
+		this.tours = data.tours
 	},
 	updated(){
 	}

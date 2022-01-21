@@ -6,8 +6,7 @@
 	<div class="container-xl">
 		<div class="row" id="maincont">
 			<div class="col-12" id="content">
-				<div id="markdown" class="mt-5 mb-5"></div>
-				
+				<div id="markdown" v-html="Markdown" class="mt-5 mb-5"></div>
 				<v-footer />
 			</div>
 		</div>
@@ -16,7 +15,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 export default {
 	name: 'AboutPage',
 	head() {
@@ -29,29 +27,19 @@ export default {
 			meta: {
 				"title": "",
 				"subtitle": ""
-			}
+			},
+			Markdown: ""
 		}
 	},
 	created(){
-		axios
-		.get('/docs/about/' + this.$route.params.id + '/meta.json')
-		.then((response) => {
-			this.meta.title = response.data.title
-			this.meta.subtitle = response.data.subtitle
-		})
+		let rawMD = require('../../static/docs/about/'+ this.$route.params.id + '/' + this.$route.params.id + '.md')
+		this.Markdown = rawMD.default
+		let data = require('../../static/docs/about/' + this.$route.params.id + '/meta.json')
+		this.meta.title = data.title
+		this.meta.subtitle = data.subtitle
 	},
-	mounted(){
-		axios
-		.get('/docs/about/' + this.$route.params.id + '/' + this.$route.params.id + '.md')
-		.then((response) => {
-			var Convertor = new showdown.Converter()
-			$('#markdown').html(Convertor.makeHtml(response.data))
-		})
-		.catch((error) => {
-			console.log(error)
-		})
-	},
-	updated(){
+	mounted() {
+		let Markdown = import (`../../static/docs/about/${this.$route.params.id}/${this.$route.params.id}.md`)
 	}
 }
 </script>

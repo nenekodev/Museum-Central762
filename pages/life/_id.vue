@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 export default {
 	name: 'LifeDetailPage',
 	head() {
@@ -34,14 +33,11 @@ export default {
 		}
 	},
 	created(){
-		axios
-		.get('/docs/life/' + this.$route.params.id + '/' + this.$route.params.id + '.json')
-		.then((response) => {
-			this.meta.title = response.data.title
-			this.meta.subtitle = response.data.subtitle
-			this.meta.scale = response.data.scale
-			this.list = response.data.list
-		})
+		let data = require('../../static/docs/life/' + this.$route.params.id + '/' + this.$route.params.id + '.json')
+		this.meta.title = data.title
+		this.meta.subtitle = data.subtitle
+		this.meta.scale = data.scale
+		this.list = data.list
 	},
 	updated(){
 	}

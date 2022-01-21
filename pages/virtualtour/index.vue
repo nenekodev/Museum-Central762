@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 export default {
 	name: 'VirtualtourPage',
 	head: {
@@ -34,12 +33,9 @@ export default {
 		}
 	},
 	created() {
-		axios
-		.get('/docs/tour.json')
-		.then(response => {
-			this.tours = response.data.tours
-			this.specials = response.data.specials
-		});
+		let data = require('../../static/docs/tour.json')
+		this.tours = data.tours
+		this.specials = data.specials
 	},
 	methods: {
 		scrollToPosition(ID) {

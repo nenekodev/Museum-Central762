@@ -1,13 +1,15 @@
 {
 	"life":[
 		{
-			"title": "刊物封面和目录",
-			"bgImg": "https://s4.ax1x.com/2022/01/19/7rgdij.jpg",
+			"title": "刊物封面和目录展",
+			"badge": "实物展",
+			"bgImg": "https://s4.ax1x.com/2022/01/21/72UdsO.jpg",
 			"link": "./life/magazines"
 		},
 		{
-			"title": "工具书和表格",
-			"bgImg": "https://s4.ax1x.com/2022/01/19/7rgdij.jpg",
+			"title": "工具书和表格展",
+			"badge": "实物展",
+			"bgImg": "https://s4.ax1x.com/2022/01/21/72UaQK.jpg",
 			"link": "./life/references"
 		}
 	]
