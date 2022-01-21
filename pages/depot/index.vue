@@ -21,6 +21,9 @@
 import axios from 'axios';
 export default {
   name: 'DepotPage',
+  head: {
+		title: '车辆 / 中原铁道（数字）博物馆'
+	},
   data() {
 		return {
 			page: {
@@ -29,9 +32,6 @@ export default {
 				"intro": "动静交错之间，一探它们曾经风驰电掣的身影"
 			}
 		}
-	},
-	created() {
-		document.title = '车辆 / 中原铁道（数字）博物馆'
 	},
 	methods: {
 		scrollToPosition(ID) {
