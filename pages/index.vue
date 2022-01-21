@@ -73,7 +73,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 export default {
 	name: 'IndexPage',
 	data() {
@@ -84,13 +83,10 @@ export default {
 		}
 	},
 	created() {
-		axios
-		.get('/docs/index.json')
-		.then(response => {
-			this.update = response.data.update
-			this.jumboItems = response.data.jumboItems
-			this.categories = response.data.categories
-		});
+		let data = require('../static/docs/index.json')
+		this.update = data.update
+		this.jumboItems = data.jumboItems
+		this.categories = data.categories
 	},
 	methods: {
 		scrollToPosition(ID) {

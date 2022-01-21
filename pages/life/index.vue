@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 export default {
   name: 'LifePage',
   head: {
@@ -31,12 +30,9 @@ export default {
 			life: []
 		}
 	},
-		created() {
-		axios
-		.get('/docs/life.json')
-		.then(response => {
-			this.life = response.data.life
-		});
+	created() {
+		let data = require('../../static/docs/life.json')
+		this.life = data.life
 	},
 	methods: {
 		scrollToPosition(ID) {

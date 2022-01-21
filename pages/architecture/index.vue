@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 export default {
   name: 'ArchitecturePage',
   head: {
@@ -32,11 +31,8 @@ export default {
 		}
 	},
 	created() {
-		axios
-		.get('/docs/architecture.json')
-		.then(response => {
-			this.archs = response.data.architecture
-		});
+		let data = require('../../static/docs/architecture.json')
+		this.archs = data.architecture
 	},
 	methods: {
 		scrollToPosition(ID) {
