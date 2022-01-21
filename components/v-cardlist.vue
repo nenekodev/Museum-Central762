@@ -27,7 +27,8 @@ export default {
 		isTitleOn: Boolean,
 		title: String,
 		subtitle: String,
-		list: String,
-		color: String}
+		list: Array,
+		color: String
+	}
 }
 </script>

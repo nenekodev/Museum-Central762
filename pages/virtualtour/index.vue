@@ -20,12 +20,12 @@ import axios from 'axios';
 export default {
 	name: 'VirtualtourPage',
 	head: {
-		title: '虚拟漫游 / 中原铁道（数字）博物馆'
+		title: '漫游 / 中原铁道（数字）博物馆'
 	},
 	data() {
 		return {
 			page: {
-				"title": "虚拟漫游",
+				"title": "漫游",
 				"subtitle": "Virtual Tour",
 				"intro": "坐地日行千万里，探寻中原大地硕果累累的窄轨遗迹"
 			},
