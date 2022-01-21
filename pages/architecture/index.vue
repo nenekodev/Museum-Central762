@@ -1,13 +1,12 @@
 <template>
 <div>
-    <v-navbar />
-    <v-headjumbo :title="page.title" :subtitle="page.subtitle" :intro="page.intro" />
+	<v-navbar />
+	<v-headjumbo :title="page.title" :subtitle="page.subtitle" :intro="page.intro" />
 
 	<div class="container-xl">
-		<div class="row" id="maincont">
-			<div class="col-12" id="content">
-				<v-cardlist isTitleOn="false" :list="tours" color="bg-light text-dark"/>
-				<v-cardlist isTitleOn="true" title="特别展出" subtitle="Specials" :list="specials" color="bg-danger text-light" />
+		<div class="row">
+			<div class="col-12" v-for="(arch, index) in archs" :key="index">
+				<v-album :list="arch" scale=280 />
 			</div>
 			<v-footer />
 		</div>
@@ -18,26 +17,26 @@
 <script>
 import axios from 'axios';
 export default {
-  name: 'VirtualtourPage',
+  name: 'ArchitecturePage',
+  head: {
+		title: '建筑 / 中原铁道（数字）博物馆'
+	},
   data() {
 		return {
 			page: {
-				"title": "虚拟漫游",
-				"subtitle": "Virtual Tour",
-				"intro": "intro"
+				"title": "建筑",
+				"subtitle": "Architecture",
+				"intro": "车站、桥梁、隧道，领略地方铁路建筑风采"
 			},
-			tours: [],
-			specials: []
+			archs: []
 		}
 	},
 	created() {
 		axios
-		.get('/docs/index.json')
+		.get('/docs/architecture.json')
 		.then(response => {
-			this.tours = response.data.tours
-			this.specials = response.data.specials
+			this.archs = response.data.architecture
 		});
-		document.title = '虚拟漫游 / 中原铁道（数字）博物馆'
 	},
 	methods: {
 		scrollToPosition(ID) {

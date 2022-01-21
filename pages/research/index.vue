@@ -1,13 +1,15 @@
 <template>
 <div>
-    <v-navbar />
-    <v-headjumbo :title="page.title" :subtitle="page.subtitle" :intro="page.intro" />
+	<v-navbar />
+	<v-headjumbo :title="page.title" :subtitle="page.subtitle" :intro="page.intro" />
 
 	<div class="container-xl">
-		<div class="row" id="maincont">
-			<div class="col-12" id="content">
-				<v-cardlist isTitleOn="false" :list="tours" color="bg-light text-dark"/>
-				<v-cardlist isTitleOn="true" title="特别展出" subtitle="Specials" :list="specials" color="bg-danger text-light" />
+		<div class="row">
+			<div class="col-12 mt-6 d-flex flex-column justify-content-center" style="height:50vh;">
+				<h1>监修中...</h1>
+				<h5 class="subtext">预计二期建设完成后开放</h5>
+				<br>
+				<nuxt-link to="/" class="colored">返回首页 ›</nuxt-link>
 			</div>
 			<v-footer />
 		</div>
@@ -18,26 +20,18 @@
 <script>
 import axios from 'axios';
 export default {
-  name: 'VirtualtourPage',
+  name: 'ResearchPage',
   data() {
 		return {
 			page: {
-				"title": "虚拟漫游",
-				"subtitle": "Virtual Tour",
-				"intro": "intro"
-			},
-			tours: [],
-			specials: []
+				"title": "研究",
+				"subtitle": "Research",
+				"intro": "提供研究河南地方铁路的资料和成果"
+			}
 		}
 	},
 	created() {
-		axios
-		.get('/docs/index.json')
-		.then(response => {
-			this.tours = response.data.tours
-			this.specials = response.data.specials
-		});
-		document.title = '虚拟漫游 / 中原铁道（数字）博物馆'
+		document.title = '研究 / 中原铁道（数字）博物馆'
 	},
 	methods: {
 		scrollToPosition(ID) {

@@ -24,7 +24,7 @@ export default {
     script: [
       { src: 'https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js' },
       { src: 'https://cdn.bootcdn.net/ajax/libs/zepto/1.2.0/zepto.min.js' },
-      { src: 'https://cdn.bootcdn.net/ajax/libs/showdown/1.9.1/showdown.min.js' },
+      { src: 'https://cdn.bootcdn.net/ajax/libs/showdown/1.9.1/showdown.min.js' }
       // { src: '/js/utils.js' },
       // { src: '/js/stickUp.min.js' }
     ]
@@ -58,6 +58,6 @@ export default {
   },
 
   generate: {
-    routes: ['/about/help', '/about/agreement', '/about/privacy', '/about/update', '/virtualtour/chaoqi', '/virtualtour/xudan']
+    routes: ['/about/help', '/about/agreement', '/about/privacy', '/about/update', '/virtualtour/chaoqi', '/virtualtour/xudan', '/history/history-01']
   }
 }

@@ -18,7 +18,7 @@
 						<div class="carousel-inner">
 							<div class="carousel-item " v-for="item in jumboItems" :class="{active:item.isActive}">
 								<nuxt-link :to="item.link">
-									<div :style="{'background':'linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0.8)),url(' + item.jumboImg + ')', 'margin-bottom':0}" class="jumbotron jumbotron-fluid height-60vh">
+									<div :style="{'background':'linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0.8)),url(' + item.jumboImg + ')', 'margin-bottom':0}" class="jumbotron jumbotron-fluid jumboheight">
 									</div>
 									<div class="carousel-caption">
 										<h5>{{item.title}}</h5>

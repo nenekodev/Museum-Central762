@@ -34,7 +34,7 @@ export default {
 	},
 	created(){
 		axios
-		.get('/docs/about/' + this.$route.params.id + '/meta.json')
+		.get('/docs/history/' + this.$route.params.id + '/meta.json')
 		.then((response) => {
 			this.meta.title = response.data.title
 			this.meta.subtitle = response.data.subtitle
@@ -42,7 +42,7 @@ export default {
 	},
 	mounted(){
 		axios
-		.get('/docs/about/' + this.$route.params.id + '/' + this.$route.params.id + '.md')
+		.get('/docs/history/' + this.$route.params.id + '/' + this.$route.params.id + '.md')
 		.then((response) => {
 			var Convertor = new showdown.Converter()
 			$('#markdown').html(Convertor.makeHtml(response.data))
