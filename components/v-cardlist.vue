@@ -6,7 +6,17 @@
 		</div>
 		<div class="row">
 			<div class="col-12 col-md-3" v-for="(item, index) in list" :key="index">
-				<a :href="item.link">
+				<nuxt-link :to="item.link" v-if="item.type === 'router'">
+				<div class="card text-white bg-dark mt-3">
+					<img class="card-img" :src="item.bgImg" style="opacity: 0.6;background: linear-gradient(#DBE0DF, #DBE0DF)">
+					<div class="card-img-overlay">
+						<p class="badge" :class="color">{{item.badge}}</p>
+						<h3 class="home" v-html="item.title"></h3>
+					</div>
+				</div>
+				</nuxt-link>
+
+				<a :href="item.link" v-if="item.type === 'link'">
 				<div class="card text-white bg-dark mt-3">
 					<img class="card-img" :src="item.bgImg" style="opacity: 0.6;background: linear-gradient(#DBE0DF, #DBE0DF)">
 					<div class="card-img-overlay">

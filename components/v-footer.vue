@@ -3,9 +3,10 @@
 	<div class="row">
 		<div class="col-12 col-md-6 mt-3">
 			<h4 class="d-inline-block bold">联系我们</h4><h5 class="ms-2 subtext d-inline-block">Contact Us</h5>
-			<p class="mt-2 mb-0">LJR交通美学研究所 · QQ群 <code>325616319</code></p>
+			<p class="mt-2 mb-0">QQ群 · LJR交通美学研究所 <code>325616319</code></p>
+			<p class="mt-2 mb-0">微博 · <a href="https://weibo.com/ljrgc">@LJR交通美学研究所</a></p>
 			<p class="mt-2">联系 / 内容维护 / 反馈请至 <code>LJRstudio@aliyun.com</code></p>
-			<br>
+
 			<small class="subtext"><nuxt-link to="/about/help">帮助</nuxt-link> · <nuxt-link to="/about/agreement">使用协议与版权信息</nuxt-link> · <nuxt-link to="/about/privacy">隐私政策</nuxt-link> · <nuxt-link to="/about/update">更新日志</nuxt-link></small>
 		</div>
 	

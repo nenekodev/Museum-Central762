@@ -1,7 +1,7 @@
 <template>
 <div>
-    <v-navbar />
-    <v-headjumbo :title="page.title" :subtitle="page.subtitle" :intro="page.intro"/>
+  <v-navbar />
+  <v-headjumbo :title="page.title" :subtitle="page.subtitle" :intro="page.intro"/>
 
 	<div class="container-xl">
 		<div class="row" id="maincont">
