@@ -1,7 +1,7 @@
 <template>
 <div>
 	<v-navbar />
-	<v-headjumbo :title="meta.title" :subtitle="meta.subtitle" intro="" />
+	<v-headjumbo :title="page.title" :subtitle="page.subtitle" intro="" />
 
 	<div class="container-xl">
 		<div class="row" id="maincont">
@@ -19,24 +19,23 @@ export default {
 	name: 'AboutPage',
 	head() {
 		return{
-			title: `${this.meta.title} / 中原铁道（数字）博物馆`
+			title: `${this.page.title} / 中原铁道（数字）博物馆`,
+			meta: this.head.meta
 		}
 	},
 	data(){
 		return{
-			meta: {
-				"title": "",
-				"subtitle": ""
-			},
+			head: [],
+			page: [],
 			Markdown: ""
 		}
 	},
 	created(){
+		let data = require('../../static/docs/about/' + this.$route.params.id + '/meta.json')
+		this.head = data.head
+		this.page = data.page
 		let rawMD = require('../../static/docs/about/'+ this.$route.params.id + '/' + this.$route.params.id + '.md')
 		this.Markdown = rawMD.default
-		let data = require('../../static/docs/about/' + this.$route.params.id + '/meta.json')
-		this.meta.title = data.title
-		this.meta.subtitle = data.subtitle
 	},
 	mounted() {
 		let Markdown = import (`../../static/docs/about/${this.$route.params.id}/${this.$route.params.id}.md`)

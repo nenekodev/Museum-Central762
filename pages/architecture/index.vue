@@ -17,21 +17,23 @@
 <script>
 export default {
   name: 'ArchitecturePage',
-  head: {
-		title: '建筑 / 中原铁道（数字）博物馆'
+	head() {
+		return{
+			title: `${this.page.title} / 中原铁道（数字）博物馆`,
+			meta: this.head.meta
+		}
 	},
-  data() {
+	data() {
 		return {
-			page: {
-				"title": "建筑",
-				"subtitle": "Architecture",
-				"intro": "车站、桥梁、隧道，领略地方铁路建筑风采"
-			},
+			head: [],
+			page: [],
 			archs: []
 		}
 	},
 	created() {
-		let data = require('../../static/docs/architecture.json')
+		let data = require('../../static/docs/architecture/architecture.json')
+		this.head = data.head
+		this.page = data.page
 		this.archs = data.architecture
 	},
 	methods: {

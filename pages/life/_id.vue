@@ -1,12 +1,12 @@
 <template>
 <div>
 	<v-navbar />
-	<v-headjumbo :title="meta.title" :subtitle="meta.subtitle" intro="" />
+	<v-headjumbo :title="page.title" :subtitle="page.subtitle" intro="" />
 
 	<div class="container-xl">
 		<div class="row" id="maincont">
 			<div class="col-12" v-for="(item, index) in list" :key="index">
-				<v-album :list="item" :scale="meta.scale" />
+				<v-album :list="item" :scale="scale" />
 			</div>
 		</div>
 		<v-footer />
@@ -19,25 +19,24 @@ export default {
 	name: 'LifeDetailPage',
 	head() {
 		return{
-			title: `${this.meta.title} / 中原铁道（数字）博物馆`
+			title: `${this.page.title} / 中原铁道（数字）博物馆`,
+			meta: this.head.meta
 		}
 	},
 	data(){
 		return{
-			meta: {
-				"title": "",
-				"subtitle": "",
-				"scale": ""
-			},
-			list: []
+			head: [],
+			page: [],
+			list: [],
+			scale: ''
 		}
 	},
 	created(){
 		let data = require('../../static/docs/life/' + this.$route.params.id + '/' + this.$route.params.id + '.json')
-		this.meta.title = data.title
-		this.meta.subtitle = data.subtitle
-		this.meta.scale = data.scale
+		this.head = data.head
+		this.page = data.page
 		this.list = data.list
+		this.scale = data.scale
 	},
 	updated(){
 	}

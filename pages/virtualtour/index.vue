@@ -18,22 +18,24 @@
 <script>
 export default {
 	name: 'VirtualtourPage',
-	head: {
-		title: '漫游 / 中原铁道（数字）博物馆'
+	head() {
+		return {
+			title: `${this.page.title} / 中原铁道（数字）博物馆`,
+			meta: this.head.meta
+		}
 	},
 	data() {
 		return {
-			page: {
-				"title": "漫游",
-				"subtitle": "Virtual Tour",
-				"intro": "坐地日行千万里，探寻中原大地硕果累累的窄轨遗迹"
-			},
+			head: [],
+			page: [],
 			tours: [],
 			specials: []
 		}
 	},
 	created() {
-		let data = require('../../static/docs/tour.json')
+		let data = require('../../static/docs/tour/tour.json')
+		this.head = data.head
+		this.page = data.page
 		this.tours = data.tours
 		this.specials = data.specials
 	},

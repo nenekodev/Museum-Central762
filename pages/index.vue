@@ -65,7 +65,7 @@
 						</div>
 					</div>
 				</div>
-				<v-footer />	
+				<v-footer />
 			</div>
 		</div>
 		</div>
@@ -75,15 +75,23 @@
 <script>
 export default {
 	name: 'IndexPage',
+	head(){
+		return {
+			meta: this.head.meta
+		}
+	},
 	data() {
 		return {
+			head: [],
 			update: [],
 			jumboItems: [],
 			categories: []
 		}
 	},
+
 	created() {
 		let data = require('../static/docs/index.json')
+		this.head = data.head
 		this.update = data.update
 		this.jumboItems = data.jumboItems
 		this.categories = data.categories

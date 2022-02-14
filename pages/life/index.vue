@@ -16,22 +16,24 @@
 
 <script>
 export default {
-  name: 'LifePage',
-  head: {
-		title: '生活 / 中原铁道（数字）博物馆'
+	name: 'LifePage',
+	head() {
+		return{
+			title: `${this.page.title} / 中原铁道（数字）博物馆`,
+			meta: this.head.meta
+		}
 	},
-  data() {
+	data() {
 		return {
-			page: {
-				"title": "生活",
-				"subtitle": "Life",
-				"intro": "交通连接人间世，实物展再现地方铁路运营景象"
-			},
+			head: [],
+			page: [],
 			life: []
 		}
 	},
 	created() {
-		let data = require('../../static/docs/life.json')
+		let data = require('../../static/docs/life/life.json')
+		this.head = data.head
+		this.page = data.page
 		this.life = data.life
 	},
 	methods: {

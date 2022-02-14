@@ -18,22 +18,24 @@
 <script>
 import axios from 'axios';
 export default {
-  name: 'ResearchPage',
-  head: {
-		title: '研究 / 中原铁道（数字）博物馆'
-	},
-  data() {
+	name: 'ResearchPage',
+	head() {
 		return {
-			page: {
-				"title": "研究",
-				"subtitle": "Research",
-				"intro": "提供研究河南地方铁路的资料和成果"
-			},
+			title: `${this.page.title} / 中原铁道（数字）博物馆`,
+			meta: this.head.meta
+		}
+	},
+	data() {
+		return {
+			head: [],
+			page: [],
 			researches: []
 		}
 	},
 	created() {
-		let data = require('../../static/docs/research.json')
+		let data = require('../../static/docs/research/research.json')
+		this.head = data.head
+		this.page = data.page
 		this.researches = data.researches
 	},
 	methods: {

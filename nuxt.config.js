@@ -11,20 +11,19 @@ export default {
 		meta: [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no' },
-			{ hid: 'description', name: 'description', content: '' },
 			{ name: 'format-detection', content: 'telephone=no' }
 		],
 		link: [
 			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-			{ rel: 'stylesheet', href: 'https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css' },
+			{ rel: 'stylesheet', href: 'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-2-M/bootstrap/5.1.0/css/bootstrap.min.css' },
 			{ rel: 'stylesheet', href: '/css/base.css' },
 			{ rel: 'stylesheet', href: '/css/day.css', media: '(prefers-color-scheme: no-preference), (prefers-color-scheme: light)' },
 			{ rel: 'stylesheet', href: '/css/night.css', media: '(prefers-color-scheme: dark)' }
 		],
 		script: [
-			{ src: 'https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js' },
-			{ src: 'https://cdn.bootcdn.net/ajax/libs/zepto/1.2.0/zepto.min.js' },
-			{ src: 'https://cdn.bootcdn.net/ajax/libs/showdown/1.9.1/showdown.min.js' }
+			{ src: 'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-2-M/bootstrap/5.1.0/js/bootstrap.bundle.min.js' },
+			{ src: 'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/zepto/1.2.0/zepto.min.js' }
+			// { src: 'https://cdn.bootcdn.net/ajax/libs/showdown/1.9.1/showdown.min.js' },
 			// { src: '/js/utils.js' },
 			// { src: '/js/stickUp.min.js' }
 		]
@@ -71,6 +70,8 @@ export default {
 			
 			'/virtualtour/chaoqi',
 			'/virtualtour/xudan',
+			'/virtualtour/zhuru',
+			'/virtualtour/luofu',
 
 			'/life/magazines',
 			'/life/references'

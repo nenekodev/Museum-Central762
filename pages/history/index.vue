@@ -17,19 +17,22 @@
 <script>
 export default {
 	name: 'HistoryPage',
-	head: {
-		title: '历史 / 中原铁道（数字）博物馆'
+	head() {
+		return {
+			title: `${this.page.title} / 中原铁道（数字）博物馆`,
+			meta: this.head.meta
+		}
 	},
 	data() {
 		return {
-			page: {
-				"title": "历史",
-				"subtitle": "History",
-				"intro": "寸尺亦能去西东，讲述河南地方铁路的兴起发展"
-			},
+			head: [],
+			page: []
 		}
 	},
 	created() {
+		let data = require('../../static/docs/history/history.json')
+		this.head = data.head
+		this.page = data.page
 		let rawMD = require('../../static/docs/history/history.md')
 		this.Markdown = rawMD.default
 	},

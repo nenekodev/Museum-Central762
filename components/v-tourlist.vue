@@ -6,11 +6,13 @@
 				<br>
 				<p v-html="description"></p>
 			</div>
-			<div class="col-12 col-md-8 mt-3">
-				<img class="img-fluid" :src="mainPic" />
+			<div class="col-12 col-md-8 mt-3 d-flex" style="flex-wrap: wrap;justify-content: center;">
+				<img class="img-fluid" :src="mainPic.url" :alt="mainPic.alt" />
+				<p class="mt-1">{{mainPic.alt}}</p>
 			</div>
-			<div class="col-12 col-md-4" v-for="(pic, index) in pics" :key="index">
-				<img class="img-fluid mt-3" :src="pic" />
+			<div class="col-12 col-md-4 d-flex" style="flex-wrap: wrap;justify-content: center;" v-for="(pic, index) in pics" :key="index">
+				<img class="img-fluid mt-3" :src="pic.url" :alt="pic.alt" />
+				<p class="mt-1">{{pic.alt}}</p>
 			</div>
 		</div>
 	</div>
@@ -28,7 +30,6 @@ export default {
 		return {
 			options: {
 				toolbar: false,
-				movable: false,
 				transition: false,
 				fullscreen: false,
 				rotatable: false
