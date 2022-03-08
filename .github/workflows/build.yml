@@ -32,7 +32,9 @@ jobs:
     - name: Copy dist Files
       run: cp -r ./dist/. ../site
     - name: Checkout branch
-      run: git checkout gh-pages
+      uses: actions/checkout@v3
+      with:
+        ref: gh-pages
     - name: Copy dist to gh-pages branch
       run: cp -r -f ../site/. ./
     - name: Commit and push
