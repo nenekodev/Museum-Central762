@@ -17,7 +17,7 @@
         >
           <div class="card text-white bg-dark mt-3">
             <img
-              class="card-img"
+              class="card-img index-img"
               :src="item.bgImg"
               style="opacity: 0.6;background: linear-gradient(#DBE0DF, #DBE0DF)"
             >
@@ -39,7 +39,7 @@
         >
           <div class="card text-white bg-dark mt-3">
             <img
-              class="card-img"
+              class="card-img index-img"
               :src="item.bgImg"
               style="opacity: 0.6;background: linear-gradient(#DBE0DF, #DBE0DF)"
             >

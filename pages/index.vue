@@ -110,7 +110,7 @@
                 <nuxt-link :to="item.link">
                   <div class="card text-dark mt-3">
                     <img
-                      class="card-img"
+                      class="card-img index-img"
                       :src="item.bgImg"
                       :alt="item.title"
                     >
