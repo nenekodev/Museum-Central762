@@ -15,11 +15,13 @@
           :to="item.link"
           v-if="item.type === 'router'"
         >
-          <div class="card text-white bg-dark mt-3">
+          <div
+            class="card text-white mt-3 ratio"
+            style="--bs-aspect-ratio: calc(3 / 2 * 100%);"
+          >
             <img
-              class="card-img index-img"
+              class="card-img cardlist-img"
               :src="item.bgImg"
-              style="opacity: 0.6;background: linear-gradient(#DBE0DF, #DBE0DF)"
             >
             <div class="card-img-overlay">
               <p
@@ -37,11 +39,13 @@
           :href="item.link"
           v-if="item.type === 'link'"
         >
-          <div class="card text-white bg-dark mt-3">
+          <div
+            class="card text-white mt-3 ratio"
+            style="--bs-aspect-ratio: calc(3 / 2 * 100%);"
+          >
             <img
-              class="card-img index-img"
+              class="card-img cardlist-img"
               :src="item.bgImg"
-              style="opacity: 0.6;background: linear-gradient(#DBE0DF, #DBE0DF)"
             >
             <div class="card-img-overlay">
               <p

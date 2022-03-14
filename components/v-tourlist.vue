@@ -10,15 +10,21 @@
         <p v-html="description"></p>
       </div>
       <div
+        v-if="mainPic"
         class="col-12 col-md-8 mt-3 d-flex"
-        style="flex-wrap: wrap;justify-content: center;"
+        style="flex-wrap: wrap; justify-content: center;"
       >
-        <img
-          class="img-fluid"
-          :src="mainPic.url"
-          :alt="mainPic.alt"
-        />
-        <p class="mt-1">{{mainPic.alt}}</p>
+        <div
+          class="card ratio"
+          style="--bs-aspect-ratio: calc(2 / 3 * 100%);"
+        >
+          <img
+            class="card-img"
+            :src="mainPic.url"
+            :alt="mainPic.alt"
+          />
+        </div>
+        <p class="mt-1 subtext">{{mainPic.alt}}</p>
       </div>
       <div
         class="col-12 col-md-4 d-flex"
@@ -26,11 +32,16 @@
         v-for="(pic, index) in pics"
         :key="index"
       >
-        <img
-          class="img-fluid mt-3"
-          :src="pic.url"
-          :alt="pic.alt"
-        />
+        <div
+          class="card ratio mt-3"
+          style="--bs-aspect-ratio: calc(2 / 3 * 100%);"
+        >
+          <img
+            class="img-fluid"
+            :src="pic.url"
+            :alt="pic.alt"
+          />
+        </div>
         <p class="mt-1 subtext">{{pic.alt}}</p>
       </div>
     </div>

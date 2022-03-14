@@ -13,16 +13,21 @@
         <div
           class="albumitem"
           v-for="img in list.pics"
-          :style="{width:img.width*scale/img.height+'px','flex-grow':img.width*scale/img.height}"
+          :style="{
+            width: img.width * scale / img.height + 'px',
+            'flex-grow': img.width * scale / img.height
+          }"
           :key="img.index"
         >
-          <i :style="{'padding-bottom':img.height/img.width*100+'%'}">
+          <i :style="{
+            'padding-bottom': img.height / img.width * 100 + '%'
+          }">
           </i>
-          <img
-            class="albumpic"
-            :src="img.url"
-            :alt="img.alt"
-          >
+            <img
+              class="albumpic"
+              :src="img.url"
+              :alt="img.alt"
+            >
           <center>
             <p class="mt-1 subtext">{{img.alt}}</p>
           </center>
