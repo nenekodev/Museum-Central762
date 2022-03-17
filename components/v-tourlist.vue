@@ -37,7 +37,7 @@
           style="--bs-aspect-ratio: calc(2 / 3 * 100%);"
         >
           <img
-            class="img-fluid"
+            class="card-img"
             :src="pic.url"
             :alt="pic.alt"
           />

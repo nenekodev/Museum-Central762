@@ -15,19 +15,20 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-2-M/bootstrap/5.1.0/css/bootstrap.min.css' },
+      { rel: 'stylesheet', href: '/css/bootstrap.min.css' },
       { rel: 'stylesheet', href: '/css/base.css' },
       { rel: 'stylesheet', href: '/css/day.css', media: '(prefers-color-scheme: no-preference), (prefers-color-scheme: light)' },
       { rel: 'stylesheet', href: '/css/night.css', media: '(prefers-color-scheme: dark)' }
     ],
     script: [
-      { src: 'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-2-M/bootstrap/5.1.0/js/bootstrap.bundle.min.js' },
-      { src: 'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/zepto/1.2.0/zepto.min.js' }
+      { src: '~/assets/js/bootstrap.bundle.min.js' },
     ]
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  // plugins: [
+  //   { src: '~/assets/js/bootstrap.bundle.min.js' }
+  // ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -53,7 +54,9 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    extractCSS: true
+  },
 
   generate: {
     routes: [
