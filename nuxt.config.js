@@ -21,7 +21,7 @@ export default {
       { rel: 'stylesheet', href: '/css/night.css', media: '(prefers-color-scheme: dark)' }
     ],
     script: [
-      { src: '~/assets/js/bootstrap.bundle.min.js' },
+      { src: '/js/bootstrap.bundle.min.js' },
     ]
   },
 
