@@ -45,37 +45,55 @@
             <nuxt-link
               class="nav-link"
               to="/virtualtour"
-            ><span>漫游</span><span class="subtext ms-2">Virtual Tour</span></nuxt-link>
+            >
+              <span>漫游</span>
+              <span class="subtext ms-2">Virtual Tour</span>
+            </nuxt-link>
           </li>
           <li class="nav-item">
             <nuxt-link
               class="nav-link"
               to="/depot"
-            ><span>车辆</span><span class="subtext ms-2">Depot</span></nuxt-link>
+            >
+              <span>车辆</span>
+              <span class="subtext ms-2">Depot</span>
+            </nuxt-link>
           </li>
           <li class="nav-item">
             <nuxt-link
               class="nav-link"
               to="/architecture"
-            ><span>建筑</span><span class="subtext ms-2">Architecture</span></nuxt-link>
+            >
+              <span>建筑</span>
+              <span class="subtext ms-2">Architecture</span>
+            </nuxt-link>
           </li>
           <li class="nav-item">
             <nuxt-link
               class="nav-link"
               to="/life"
-            ><span>生活</span><span class="subtext ms-2">Life</span></nuxt-link>
+            >
+              <span>生活</span>
+              <span class="subtext ms-2">Life</span>
+            </nuxt-link>
           </li>
           <li class="nav-item">
             <nuxt-link
               class="nav-link"
               to="/history"
-            ><span>历史</span><span class="subtext ms-2">History</span></nuxt-link>
+            >
+              <span>历史</span>
+              <span class="subtext ms-2">History</span>
+            </nuxt-link>
           </li>
           <li class="nav-item">
             <nuxt-link
               class="nav-link"
               to="/research"
-            ><span>研究</span><span class="subtext ms-2">Research</span></nuxt-link>
+            >
+              <span>研究</span>
+              <span class="subtext ms-2">Research</span>
+            </nuxt-link>
           </li>
         </ul>
       </div>

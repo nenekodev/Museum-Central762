@@ -71,7 +71,9 @@ export default {
       '/virtualtour/luofu',
 
       '/life/magazines',
-      '/life/references'
+      '/life/references',
+
+      '/specials/yujian'
     ]
   }
 }

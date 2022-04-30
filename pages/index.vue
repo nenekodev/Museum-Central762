@@ -10,14 +10,34 @@
           <div class="row">
             <div class="col-12 mt-6">
               <div
-                class="alert alert-danger"
-                style="text-align: center;"
+                class="mb-3"
+                v-if="specials.info"
               >
-                <a
-                  :href="update.link"
-                  v-html="update.info"
-                ></a>
+                <nuxt-link :to="specials.link">
+                  <div
+                    class="alert"
+                    v-html="specials.info"
+                    :style="{
+                      'background':'url(' + specials.bgImg + '),' + specials.colorBg,
+                      'background-size':'auto 200px',
+                      'background-repeat':'no-repeat',
+                      'background-position':'center right',
+                      'color':specials.color
+                    }"
+                  >
+                  </div>
+                </nuxt-link>
               </div>
+
+              <nuxt-link :to="update.link">
+                <div
+                  class="alert alert-danger"
+                  style="text-align: center;"
+                  v-html="update.info"
+                >
+                </div>
+              </nuxt-link>
+
             </div>
             <div class="col-lg-8 col-12 mt-3">
               <div
@@ -143,6 +163,7 @@ export default {
     return {
       head: [],
       update: [],
+      specials: [],
       jumboItems: [],
       categories: []
     }
@@ -152,6 +173,7 @@ export default {
     let data = require('../static/docs/index.json')
     this.head = data.head
     this.update = data.update
+    this.specials = data.specials
     this.jumboItems = data.jumboItems
     this.categories = data.categories
   }
